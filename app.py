@@ -35,7 +35,7 @@ with col1:
    st.header("    ")
    
 with col2:
-   if st.button("RUN SPEED TEST"):
+   if st.button("RUN INTERNET SPEED TEST"):
        st.text("Downloading Speed : " + str(download_speedtest) + " mbps")
        st.text("Uploading Speed : " + str(uploaded_speedtest) + " mbps")
 
