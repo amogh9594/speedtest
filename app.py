@@ -30,8 +30,8 @@ with col1:
    
 with col2:
    if st.button("RUN INTERNET SPEED TEST"):
-       st.text("Downloading Speed : " + str(int(download_speedtest)) + " mbps")
-       st.text("Uploading Speed : " + str(int(uploaded_speedtest)) + " mbps")
+       st.text("Downloading Speed : " + str(int(download_speedtest)))
+       st.text("Uploading Speed : " + str(int(uploaded_speedtest)))
 
 with col3:
    st.header("    ")
