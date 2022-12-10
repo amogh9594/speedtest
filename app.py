@@ -16,8 +16,8 @@ lottie_coding = load_lottieurl("https://assets4.lottiefiles.com/private_files/lf
 download_byte = int(test.download())
 upload_byte = int(test.upload())
 
-download_speedtest = download_byte/(1024 * 1024)
-uploaded_speedtest = upload_byte/(1024 * 1024)
+download_speedtest = download_byte/1048576
+uploaded_speedtest = upload_byte/1048576
 
 st_lottie(lottie_coding, height=300, key="coding")
 st.markdown("<h1 style='text-align: center; color: white;'>SPEEDTEST</h1>", unsafe_allow_html=True)
