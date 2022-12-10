@@ -11,23 +11,17 @@ def load_lottieurl(url):
         return None
     return r.json()
 
-def bytes_to_mb(bytes):
-  KB = 1024 # One Kilobyte is 1024 bytes
-  MB = KB * 1024 # One MB is 1024 KB
-  return int(bytes/MB)
-
 lottie_coding = load_lottieurl("https://assets4.lottiefiles.com/private_files/lf30_itel2xi4.json")
 
-download_speedtest = bytes_to_mb(test.download())
-uploaded_speedtest = bytes_to_mb(test.upload())
+download_byte = int(test.download())
+upload_byte = int(test.upload())
+
+download_speedtest = download_byte/(1024 * 1024)
+uploaded_speedtest = upload_byte/(1024 * 1024)
 
 st_lottie(lottie_coding, height=300, key="coding")
 st.markdown("<h1 style='text-align: center; color: white;'>SPEEDTEST</h1>", unsafe_allow_html=True)
 st.markdown("----", unsafe_allow_html=True)
-
-# if st.button("RUN SPEED TEST"):
-#     st.text("Downloading Speed : " + str(download_speedtest) + " mbps")
-#     st.text("Uploading Speed : " + str(uploaded_speedtest) + " mbps")
 
 col1, col2, col3 = st.columns(3)
 
@@ -36,8 +30,8 @@ with col1:
    
 with col2:
    if st.button("RUN INTERNET SPEED TEST"):
-       st.text("Downloading Speed : " + str(download_speedtest) + " mbps")
-       st.text("Uploading Speed : " + str(uploaded_speedtest) + " mbps")
+       st.text("Downloading Speed : " + str(int(download_speedtest)) + " mbps")
+       st.text("Uploading Speed : " + str(int(uploaded_speedtest)) + " mbps")
 
 with col3:
    st.header("    ")
