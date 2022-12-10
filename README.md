@@ -6,11 +6,11 @@ Check your Internet speed in under 30 seconds. Speedtest measures the speed betw
 
 ```
 import speedtest
-def bytes_to_mb(bytes):
-  KB = 1024 # One Kilobyte is 1024 bytes
-  MB = KB * 1024 # One MB is 1024 KB
-  return int(bytes/MB)
 
-download_speedtest = bytes_to_mb(test.download())
-uploaded_speedtest = bytes_to_mb(test.upload())
+test = speedtest.Speedtest()
+download_byte = int(test.download())
+upload_byte = int(test.upload())
+
+download_speedtest = download_byte/1048576
+uploaded_speedtest = upload_byte/1048576
 ```
