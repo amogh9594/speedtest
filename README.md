@@ -14,3 +14,7 @@ upload_byte = int(test.upload())
 download_speedtest = download_byte/1048576
 uploaded_speedtest = upload_byte/1048576
 ```
+
+## Screenshot
+
+![Speed Tester](https://github.com/amogh9594/speedtest/blob/main/speedtest.png)
